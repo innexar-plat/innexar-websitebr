@@ -13,9 +13,9 @@ if os.path.isdir(_build_lib):
 else:
     sys.path.insert(0, _backend_dir)
 
-from sqlalchemy import text
-from sqlalchemy.ext.asyncio import create_async_engine
-from app.core.config import settings
+from sqlalchemy import text  # noqa: E402
+from sqlalchemy.ext.asyncio import create_async_engine  # noqa: E402
+from app.core.config import settings  # noqa: E402
 
 
 async def main() -> None:

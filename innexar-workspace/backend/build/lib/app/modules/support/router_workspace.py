@@ -17,7 +17,6 @@ from app.modules.support.schemas import (
     TicketMessageCreate,
     TicketMessageResponse,
     TicketResponse,
-    TicketUpdate,
 )
 
 router = APIRouter(prefix="/support", tags=["workspace-support"])

@@ -7,7 +7,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.storage.loader import get_storage_backend
 from app.modules.files.models import ProjectFile
-from app.modules.projects.models import Project
 
 
 def _safe_filename(name: str) -> str:

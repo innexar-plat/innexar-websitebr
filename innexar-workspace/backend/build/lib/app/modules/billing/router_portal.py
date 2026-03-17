@@ -4,10 +4,6 @@ from datetime import datetime, timezone
 from typing import Annotated
 
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Request, status
-
-from app.core.debug_log import debug_log
-
-logger = logging.getLogger(__name__)
 from fastapi.responses import HTMLResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -15,17 +11,20 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.auth_customer import get_current_customer
 from app.core.config import settings
 from app.core.database import AsyncSessionLocal, get_db
+from app.core.debug_log import debug_log
 from app.models.customer import Customer
 from app.models.customer_user import CustomerUser
 from app.modules.billing.dependencies import require_billing_enabled
 from app.modules.billing.enums import InvoiceStatus
 from app.modules.billing.models import Invoice, Subscription
+from app.modules.billing.overdue import reactivate_subscription_after_payment
 from app.modules.billing.provisioning import trigger_provisioning_if_needed
 from app.modules.billing.schemas import InvoiceResponse, PayRequest, PayResponse
 from app.modules.billing.service import _get_payment_provider, create_payment_attempt
-from app.modules.billing.overdue import reactivate_subscription_after_payment
 from app.modules.notifications.service import create_notification_and_maybe_send_email
 from app.providers.payments.mercadopago import MercadoPagoProvider
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(tags=["portal-billing"])
 ORG_ID = "innexar"

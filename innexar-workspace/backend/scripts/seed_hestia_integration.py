@@ -26,10 +26,10 @@ if os.path.isdir(_build_lib):
 else:
     sys.path.insert(0, _backend_dir)
 
-from app.core.database import AsyncSessionLocal
-from app.core.encryption import encrypt_value
-from app.models.integration_config import IntegrationConfig
-from sqlalchemy import select
+from app.core.database import AsyncSessionLocal  # noqa: E402
+from app.core.encryption import encrypt_value  # noqa: E402
+from app.models.integration_config import IntegrationConfig  # noqa: E402
+from sqlalchemy import select  # noqa: E402
 
 
 async def main() -> None:

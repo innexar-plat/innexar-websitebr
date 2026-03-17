@@ -9,7 +9,6 @@ from sqlalchemy.orm import selectinload
 
 from app.core.database import get_db
 from app.core.security import decode_token_customer
-from app.models.customer import Customer
 from app.models.customer_user import CustomerUser
 
 security_customer = HTTPBearer(auto_error=False)

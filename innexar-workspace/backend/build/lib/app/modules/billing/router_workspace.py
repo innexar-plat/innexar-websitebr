@@ -9,7 +9,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.audit import log_audit
-from app.core.auth_staff import get_current_staff
 from app.core.database import AsyncSessionLocal, get_db
 from app.core.rbac import RequirePermission
 from app.models.customer import Customer

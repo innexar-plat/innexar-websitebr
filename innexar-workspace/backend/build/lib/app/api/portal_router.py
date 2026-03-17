@@ -1,5 +1,4 @@
 """Portal API: customer-only routes."""
-from datetime import datetime
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -494,7 +493,7 @@ async def customer_dashboard(
             has_site_delivery_product = True
     show_briefing = has_site_delivery_product and len(projects_aguardando_briefing) > 0
     show_panel = panel is not None
-    has_hestia_hosting = any(
+    _has_hestia_hosting = any(
         (p.get("provisioning_type") or "").lower() == "hestia_hosting"
         for p in products_summary
     )
