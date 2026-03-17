@@ -1,4 +1,21 @@
 {
+  "saas": {
+    "title": "Website by Subscription",
+    "subtitle": "Get a professional website with maintenance included. Pay monthly, no upfront investment.",
+    "cta": "Get started",
+    "hero": {
+      "badge": "Subscription model",
+      "benefits": [
+        "Professional responsive design",
+        "Maintenance and updates included",
+        "Hosting and domain included",
+        "Priority support"
+      ],
+      "watchDemo": "Watch demo",
+      "clientDashboard": "Client dashboard",
+      "clientDashboardDesc": "Monitor your site in real time"
+    }
+  },
   "cookies": {
     "title": "We use cookies",
     "description": "We use cookies to improve your experience, analyze traffic and personalize content. You can choose which categories to accept.",

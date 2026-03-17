@@ -1,4 +1,21 @@
 {
+  "saas": {
+    "title": "Site por Assinatura",
+    "subtitle": "Tenha um site profissional com manutenção inclusa. Pague mensalmente, sem investimento inicial.",
+    "cta": "Começar agora",
+    "hero": {
+      "badge": "Modelo por assinatura",
+      "benefits": [
+        "Design profissional e responsivo",
+        "Manutenção e atualizações inclusas",
+        "Hospedagem e domínio incluídos",
+        "Suporte prioritário"
+      ],
+      "watchDemo": "Ver demonstração",
+      "clientDashboard": "Painel do cliente",
+      "clientDashboardDesc": "Acompanhe seu site em tempo real"
+    }
+  },
   "cookies": {
     "title": "Utilizamos cookies",
     "description": "Usamos cookies para melhorar sua experiência, analisar o tráfego e personalizar conteúdo. Você pode escolher quais categorias aceitar.",

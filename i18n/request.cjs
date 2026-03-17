@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const fs = require('fs');
 
 const routing = {
   locales: ['pt', 'en', 'es'],
@@ -13,7 +14,15 @@ module.exports = async function getRequestConfig({ requestLocale }) {
   if (!locale || !routing.locales.includes(locale)) {
     locale = routing.defaultLocale;
   }
-  const messagesPath = path.join(process.cwd(), 'messages', `${locale}.json`);
-  const messages = require(messagesPath);
+  const messagesDir = path.join(process.cwd(), 'messages');
+  const messagesPath = path.join(messagesDir, `${locale}.json`);
+  let messages = {};
+  try {
+    if (fs.existsSync(messagesPath)) {
+      messages = JSON.parse(fs.readFileSync(messagesPath, 'utf8'));
+    }
+  } catch (err) {
+    console.error('[next-intl] Failed to load messages:', messagesPath, err.message);
+  }
   return { locale, messages };
 };

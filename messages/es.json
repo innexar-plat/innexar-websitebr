@@ -1,4 +1,21 @@
 {
+  "saas": {
+    "title": "Sitio por Suscripción",
+    "subtitle": "Ten un sitio profesional con mantenimiento incluido. Paga mensualmente, sin inversión inicial.",
+    "cta": "Comenzar ahora",
+    "hero": {
+      "badge": "Modelo por suscripción",
+      "benefits": [
+        "Diseño profesional y responsivo",
+        "Mantenimiento y actualizaciones incluidas",
+        "Hosting y dominio incluidos",
+        "Soporte prioritario"
+      ],
+      "watchDemo": "Ver demostración",
+      "clientDashboard": "Panel del cliente",
+      "clientDashboardDesc": "Monitorea tu sitio en tiempo real"
+    }
+  },
   "cookies": {
     "title": "Utilizamos cookies",
     "description": "Usamos cookies para mejorar tu experiencia, analizar el tráfico y personalizar el contenido. Puedes elegir qué categorías aceptar.",

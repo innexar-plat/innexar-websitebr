@@ -6,12 +6,13 @@ import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import {
   Menu, X, Globe, Smartphone, BrainCircuit, Link2, BarChart3,
-  ChevronDown, Rocket, Code2, Headphones
+  ChevronDown, Rocket, Code2, Headphones, CreditCard
 } from 'lucide-react';
 import { useSiteConfig } from '@/contexts/SiteConfigContext';
 
 const services = [
   { href: '/services/web', icon: Globe, label: 'Sites Profissionais', desc: 'Landing pages e sites corporativos' },
+  { href: '/saas', icon: CreditCard, label: 'Site por Assinatura', desc: 'Pague mensalmente, sem investimento inicial' },
   { href: '/services/apps', icon: Smartphone, label: 'Aplicativos', desc: 'Web e mobile sob medida' },
   { href: '/services/marketing', icon: BarChart3, label: 'Marketing Digital', desc: 'SEO, tráfego e conversão' },
   { href: '/prospector-ai', icon: BrainCircuit, label: 'ProspectorAI', desc: 'Prospecção com inteligência artificial' },

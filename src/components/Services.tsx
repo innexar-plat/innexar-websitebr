@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Link } from '@/i18n/navigation';
-import { Globe, Smartphone, BrainCircuit, Link2, BarChart3, Code2, ArrowRight } from 'lucide-react';
+import { Globe, Smartphone, BrainCircuit, Link2, BarChart3, Code2, ArrowRight, CreditCard } from 'lucide-react';
 
 const services = [
   {
@@ -11,6 +11,13 @@ const services = [
     desc: 'Landing pages e sites corporativos modernos, rápidos e otimizados para o Google. Design exclusivo, responsivo e com identidade visual da sua marca.',
     href: '/services/web',
     badge: 'Mais popular',
+  },
+  {
+    icon: CreditCard,
+    title: 'Site por Assinatura',
+    desc: 'Pague mensalmente, sem investimento inicial. Design, hospedagem e manutenção inclusos. Cancele quando quiser.',
+    href: '/saas',
+    badge: null,
   },
   {
     icon: Smartphone,

@@ -1,9 +1,10 @@
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Globe, Smartphone, BrainCircuit, Link2, BarChart3, Code2, Linkedin, Github, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Smartphone, BrainCircuit, Link2, BarChart3, Code2, CreditCard, Linkedin, Github, Instagram } from 'lucide-react';
 
 const services = [
   { href: '/services/web', icon: Globe, label: 'Sites Profissionais' },
+  { href: '/saas', icon: CreditCard, label: 'Site por Assinatura' },
   { href: '/services/apps', icon: Smartphone, label: 'Aplicativos' },
   { href: '/services/marketing', icon: BarChart3, label: 'Marketing Digital' },
   { href: '/prospector-ai', icon: BrainCircuit, label: 'ProspectorAI' },
@@ -16,6 +17,7 @@ const company = [
   { href: '/contact', label: 'Contato' },
   { href: '/criar-site', label: 'Criar meu site' },
   { href: '/privacy-policy', label: 'Privacidade' },
+  { href: '/terms-of-service', label: 'Termos de uso' },
 ];
 
 const social = [
