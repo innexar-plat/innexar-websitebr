@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
-// Configuração do next-intl em next-intl.config.ts (root do projeto)
-const withNextIntl = createNextIntlPlugin('./next-intl.config.ts');
+// Plugin usa o request config (getRequestConfig); path relativo à raiz do projeto.
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || "https://portal.innexar.com.br";
 const WORKSPACE_URL = process.env.NEXT_PUBLIC_WORKSPACE_URL || "https://app.innexar.com.br";

@@ -18,7 +18,8 @@ ENV NEXT_PUBLIC_WORKSPACE_API_URL=$NEXT_PUBLIC_WORKSPACE_API_URL
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 ENV NEXT_PUBLIC_MP_PUBLIC_KEY=$NEXT_PUBLIC_MP_PUBLIC_KEY
 
-RUN npm run build
+# Webpack evita problemas de resolução de path do next-intl com Turbopack no container
+RUN npx next build --webpack
 
 FROM node:20-alpine AS runner
 
@@ -35,8 +36,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-# next-intl carrega config e messages em runtime
-COPY --from=builder /app/next-intl.config.ts ./next-intl.config.ts
+# next-intl carrega request config e messages em runtime
 COPY --from=builder --chown=nextjs:nodejs /app/src/i18n ./src/i18n
 COPY --from=builder --chown=nextjs:nodejs /app/messages ./messages
 
