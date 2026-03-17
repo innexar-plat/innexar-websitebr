@@ -88,7 +88,7 @@ export default function ContactSection() {
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             viewport={{ once: true }}
           >
             <h2 className="font-['Playfair_Display'] text-3xl font-bold text-white mb-4">
@@ -107,7 +107,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as const }}
                   viewport={{ once: true }}
                   className="flex items-start gap-4 p-5 bg-white/[0.03] border border-white/[0.07] rounded-2xl hover:border-white/15 hover:-translate-y-0.5 transition-all duration-300 group"
                 >
@@ -136,7 +136,7 @@ export default function ContactSection() {
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             viewport={{ once: true }}
             className="bg-white/[0.03] border border-white/[0.07] rounded-2xl p-8"
           >

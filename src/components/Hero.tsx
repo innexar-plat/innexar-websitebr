@@ -74,7 +74,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
               className="flex items-center gap-3 mb-8"
             >
               <div className="w-6 h-[2px] bg-[#00C9B1]" />
@@ -86,7 +86,7 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] as const }}
               className="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.08] mb-6"
             >
               Seu negócio
@@ -101,7 +101,7 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] as const }}
               className="font-['DM_Sans'] text-lg text-white/55 leading-relaxed mb-10 max-w-lg"
             >
               Criamos sites profissionais, apps e soluções com IA que geram resultados reais. Do design à entrega, acompanhamos cada etapa do seu crescimento digital.
@@ -110,7 +110,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
               className="flex flex-wrap gap-4 mb-12"
             >
               <Link
@@ -151,7 +151,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] as const }}
             className="flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-md aspect-square">
@@ -189,7 +189,7 @@ export default function Hero() {
               key={i}
               variants={{
                 hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } }
+                show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const } }
               }}
               className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 hover:border-[#00C9B1]/25 hover:bg-[#00C9B1]/[0.04] hover:-translate-y-0.5 transition-all duration-300"
             >

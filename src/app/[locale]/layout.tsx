@@ -11,6 +11,9 @@ import '../globals.css'
 
 const locales = ['pt', 'en', 'es']
 
+// Evita prerender estático que falha no Docker/build (next-intl config file)
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: {
     default: 'Innexar — Sites, Apps e IA para seu Negócio',

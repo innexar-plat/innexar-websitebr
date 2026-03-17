@@ -3,9 +3,6 @@
 // Types
 export * from './types'
 
-// Components
-export * from './components'
-
 // Templates
 export { ModernTemplate, defaultModernConfig } from './modern'
 export { GourmetTemplate, defaultGourmetConfig } from './gourmet'

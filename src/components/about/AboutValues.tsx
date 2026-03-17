@@ -19,7 +19,7 @@ export default function AboutValues() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
           viewport={{ once: true, margin: '-80px' }}
           className="text-center mb-16"
         >
@@ -41,7 +41,7 @@ export default function AboutValues() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as const }}
               viewport={{ once: true, margin: '-80px' }}
               className="bg-white/[0.03] border border-white/[0.07] rounded-2xl p-8 hover:border-[#00C9B1]/25 hover:-translate-y-1 transition-all duration-300"
             >

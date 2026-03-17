@@ -1,3 +1,4 @@
+import type React from 'react'
 import type { TemplateConfig } from './types'
 
 // Import all templates
@@ -28,7 +29,7 @@ export const templateRegistry: TemplateRegistryItem[] = [
         category: 'Business',
         thumbnail: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80',
         previewUrl: '/templates/preview/modern',
-        defaultConfig: defaultModernConfig,
+        defaultConfig: defaultModernConfig as TemplateConfig,
         Component: ModernTemplate,
         tags: ['professional', 'consulting', 'agency', 'corporate'],
     },
@@ -39,7 +40,7 @@ export const templateRegistry: TemplateRegistryItem[] = [
         category: 'Restaurant',
         thumbnail: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=80',
         previewUrl: '/templates/preview/gourmet',
-        defaultConfig: defaultGourmetConfig,
+        defaultConfig: defaultGourmetConfig as TemplateConfig,
         Component: GourmetTemplate,
         tags: ['restaurant', 'food', 'cafe', 'dining', 'italian'],
     },
@@ -50,7 +51,7 @@ export const templateRegistry: TemplateRegistryItem[] = [
         category: 'Legal',
         thumbnail: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400&q=80',
         previewUrl: '/templates/preview/justice',
-        defaultConfig: defaultJusticeConfig,
+        defaultConfig: defaultJusticeConfig as TemplateConfig,
         Component: JusticeTemplate,
         tags: ['lawyer', 'attorney', 'legal', 'law firm', 'professional'],
     },
@@ -61,7 +62,7 @@ export const templateRegistry: TemplateRegistryItem[] = [
         category: 'Healthcare',
         thumbnail: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&q=80',
         previewUrl: '/templates/preview/smile',
-        defaultConfig: defaultSmileConfig,
+        defaultConfig: defaultSmileConfig as TemplateConfig,
         Component: SmileTemplate,
         tags: ['dentist', 'dental', 'medical', 'healthcare', 'doctor'],
     },
@@ -72,7 +73,7 @@ export const templateRegistry: TemplateRegistryItem[] = [
         category: 'Real Estate',
         thumbnail: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80',
         previewUrl: '/templates/preview/estate',
-        defaultConfig: defaultEstateConfig,
+        defaultConfig: defaultEstateConfig as TemplateConfig,
         Component: EstateTemplate,
         tags: ['real estate', 'realtor', 'property', 'luxury', 'homes'],
     },
@@ -83,7 +84,7 @@ export const templateRegistry: TemplateRegistryItem[] = [
         category: 'Home Services',
         thumbnail: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&q=80',
         previewUrl: '/templates/preview/craft',
-        defaultConfig: defaultCraftConfig,
+        defaultConfig: defaultCraftConfig as TemplateConfig,
         Component: CraftTemplate,
         tags: ['plumber', 'electrician', 'contractor', 'home services', 'trades'],
     },
