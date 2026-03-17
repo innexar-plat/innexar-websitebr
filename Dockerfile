@@ -21,6 +21,9 @@ ENV NEXT_PUBLIC_MP_PUBLIC_KEY=$NEXT_PUBLIC_MP_PUBLIC_KEY
 # Webpack evita problemas de resolução de path do next-intl com Turbopack
 RUN npx next build --webpack
 
+# Patch: next-intl/config carrega i18n/request.cjs em runtime (alias webpack falha no RSC)
+RUN node /app/scripts/patch-next-intl-config.js
+
 FROM node:20-alpine AS runner
 
 WORKDIR /app
