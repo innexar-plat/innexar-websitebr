@@ -1,1 +1,17 @@
-{}
+{
+  "cookies": {
+    "title": "Utilizamos cookies",
+    "description": "Usamos cookies para melhorar sua experiência, analisar o tráfego e personalizar conteúdo. Você pode escolher quais categorias aceitar.",
+    "essential": "Essenciais",
+    "essentialDesc": "Necessários para o funcionamento básico do site.",
+    "required": "Obrigatório",
+    "analytics": "Analíticos",
+    "analyticsDesc": "Ajudam a entender como os visitantes usam o site.",
+    "marketing": "Marketing",
+    "marketingDesc": "Usados para personalizar anúncios e campanhas.",
+    "settings": "Configurações",
+    "rejectAll": "Rejeitar não essenciais",
+    "savePreferences": "Salvar preferências",
+    "acceptAll": "Aceitar todos"
+  }
+}

@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
+// request.cjs não importa next-intl/server (evita erro em Client Components)
+const withNextIntl = createNextIntlPlugin('./i18n/request.cjs');
 
 const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || "https://portal.innexar.com.br";
 const WORKSPACE_URL = process.env.NEXT_PUBLIC_WORKSPACE_URL || "https://app.innexar.com.br";
