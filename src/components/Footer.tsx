@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, Globe, Smartphone, BrainCircuit, Link2, BarChart3, Code2, Linkedin, Github, Instagram } from 'lucide-react';
 

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import CookieConsent from '@/components/CookieConsent'
+import LocaleLang from '@/components/LocaleLang'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { SiteConfigProvider } from '@/contexts/SiteConfigContext'
 import '../globals.css'
@@ -57,19 +58,16 @@ export default async function RootLayout({ children, params }: Props) {
   const messages = await getMessages({ locale })
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <SiteConfigProvider>
-            <Suspense fallback={null}>
-              <GoogleAnalytics />
-            </Suspense>
-            {children}
-            <CookieConsent />
-            <WhatsAppButton />
-          </SiteConfigProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <LocaleLang locale={locale} />
+      <SiteConfigProvider>
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
+        {children}
+        <CookieConsent />
+        <WhatsAppButton />
+      </SiteConfigProvider>
+    </NextIntlClientProvider>
   )
 }

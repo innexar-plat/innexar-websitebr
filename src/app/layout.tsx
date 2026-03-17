@@ -11,11 +11,15 @@ export const metadata: Metadata = {
   },
 }
 
-// Root layout only passes children through - the [locale]/layout.tsx handles html/body
+// Root layout MUST contain html/body (Next.js requirement)
 export default function RootLayout({
   children,
 }: {
   readonly children: React.ReactNode
 }) {
-  return children
+  return (
+    <html lang="pt" suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
+    </html>
+  )
 }
