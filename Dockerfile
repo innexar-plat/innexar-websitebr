@@ -36,6 +36,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 # next-intl carrega config e messages em runtime
+COPY --from=builder /app/next-intl.config.ts ./next-intl.config.ts
 COPY --from=builder --chown=nextjs:nodejs /app/src/i18n ./src/i18n
 COPY --from=builder --chown=nextjs:nodejs /app/messages ./messages
 

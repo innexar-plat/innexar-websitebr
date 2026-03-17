@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
-// Path explícito para o config; na imagem Docker copiamos src/i18n e messages para runtime.
-const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+// Configuração do next-intl em next-intl.config.ts (root do projeto)
+const withNextIntl = createNextIntlPlugin('./next-intl.config.ts');
 
 const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || "https://portal.innexar.com.br";
 const WORKSPACE_URL = process.env.NEXT_PUBLIC_WORKSPACE_URL || "https://app.innexar.com.br";
