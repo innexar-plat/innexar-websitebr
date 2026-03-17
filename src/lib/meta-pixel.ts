@@ -52,11 +52,12 @@ export function initMetaPixel(pixelId?: string): void {
             loaded?: boolean
             version?: string
         }
-        const n = (function (this: FbqFn, ...args: unknown[]) {
-            if (this.callMethod) this.callMethod(...args)
-            else this.queue.push(args)
+        const queue: unknown[][] = []
+        const n = (function (...args: unknown[]) {
+            if (n.callMethod) n.callMethod(...args)
+            else queue.push(args)
         }) as unknown as FbqFn
-        n.queue = []
+        n.queue = queue
         n.push = n
         n.loaded = true
         n.version = '2.0'
