@@ -47,6 +47,10 @@
     ".next/dev/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "innexar-workspace-app",
+    "innexar-portal",
+    "innexar-training",
+    "innexar-websitebr"
   ]
 }

@@ -9,7 +9,7 @@
     "portfolio": "Portfólio",
     "blockchain": "Blockchain",
     "contact": "Contato",
-    "getStarted": "Começar",
+    "getStarted": "Quero Meu Site Profissional Agora",
     "prospectorAi": "Prospector AI",
     "launch": "Sites R$ 1.997",
     "criarSite": "Criar meu site",
@@ -1703,17 +1703,28 @@
   },
   "criarSite": {
     "hero": {
-      "badge": "Criação de sites profissionais em 48h",
-      "title": "Criação de site profissional para sua empresa em até 48 horas.",
-      "subtitle": "Criamos seu site profissional: rápido, otimizado para o Google e pronto para gerar clientes. Criação de sites com design moderno e suporte incluso.",
-      "ctaCreate": "Criar meu site",
+      "badge": "Criação de sites profissionais",
+      "title": "Site Profissional que Atrai Clientes pelo Google Todos os Dias",
+      "subtitle": "Design moderno, otimizado para buscas, 100% responsivo e integrado ao WhatsApp. Gere contatos reais e fortaleça sua marca online – sem dor de cabeça.",
+      "ctaCreate": "Quero Meu Site Agora",
       "ctaWhatsApp": "Falar no WhatsApp",
-      "priceStrip": "Criação de site profissional – A partir de R$ 197 por mês",
-      "benefits": ["Otimizado para Google", "Criação de sites com design profissional", "100% responsivo", "Integração com WhatsApp"]
+      "priceStrip": "Site profissional – A partir de R$ 197 por mês",
+      "benefits": [
+        "Topo do Google para suas palavras-chave",
+        "Design que transmite confiança",
+        "Leads direto no WhatsApp",
+        "Suporte e ajustes inclusos"
+      ]
     },
     "forWho": {
-      "title": "Criação de sites para quem",
-      "items": ["Advogados", "Médicos", "Clínicas", "Contadores", "Empresas locais", "Prestadores de serviço"]
+      "title": "Criação de sites profissionais para quem realmente precisa de resultados:",
+      "items": [
+        "Advogados que querem mais consultas e clientes qualificados",
+        "Médicos e dentistas que buscam atrair pacientes particulares",
+        "Clínicas e consultórios que precisam de agenda cheia",
+        "Contadores que desejam captar empresas e MEIs",
+        "Empresas locais e prestadores de serviços que querem dominar a busca local"
+      ]
     },
     "plans": {
       "title": "Planos",
@@ -1721,8 +1732,8 @@
         "name": "Site Essencial",
         "price": "197",
         "period": "/mês",
-        "delivery": "Entrega em 48 horas",
-        "cta": "Criar meu site",
+        "delivery": "Entrega em poucos dias",
+        "cta": "Quero Meu Site Agora",
         "features": [
           "Site institucional",
           "Até 5 páginas",
@@ -1739,8 +1750,8 @@
         "name": "Site Completo",
         "price": "297",
         "period": "/mês",
-        "delivery": "Entrega em 72 horas",
-        "cta": "Criar meu site",
+        "delivery": "Entrega em poucos dias",
+        "cta": "Quero Meu Site Agora",
         "features": [
           "Tudo do plano essencial",
           "Blog integrado",
@@ -1774,7 +1785,7 @@
         { "title": "Escolha seu plano", "desc": "Selecione o plano ideal para sua empresa." },
         { "title": "Crie sua conta", "desc": "Preencha as informações do seu negócio." },
         { "title": "Envie os dados do site", "desc": "Nome, serviços, logo e contatos." },
-        { "title": "Receba seu site pronto", "desc": "Seu site é entregue em até 48 ou 72 horas." }
+        { "title": "Receba seu site pronto", "desc": "Seu site é entregue em poucos dias." }
       ]
     },
     "examples": {
@@ -1783,7 +1794,7 @@
     },
     "testimonials": {
       "title": "Depoimentos",
-      "quote": "Nosso site ficou pronto em dois dias e já estamos recebendo contatos."
+      "quote": "Nosso site transmite confiança e já estamos recebendo contatos pelo WhatsApp."
     },
     "faq": {
       "title": "Perguntas frequentes",
@@ -1798,8 +1809,8 @@
     },
     "ctaFinal": {
       "title": "Pare de perder clientes para concorrentes.",
-      "subtitle": "Criação de site profissional: rápido, com SEO e suporte. Solicite o seu.",
-      "cta": "Criar meu site"
+      "subtitle": "Site profissional com SEO, suporte e integração WhatsApp. Solicite o seu.",
+      "cta": "Quero Meu Site Agora"
     }
   },
   "footer": {
@@ -1878,9 +1889,9 @@
       "keywords": "contato Innexar, orçamento criação de sites, orçamento aplicativo, inteligência artificial, Praia Grande, Santos, São Paulo"
     },
     "criar-site": {
-      "title": "Criar Site Profissional em 48h | A partir de R$ 197/mês | Innexar",
-      "description": "Criação de site profissional em até 48 horas. Hospedagem, SSL e suporte incluídos. Otimizado para Google. Praia Grande, Santos, São Paulo.",
-      "keywords": "criar site, criação de sites 48h, site profissional, site empresarial, site R$ 197, site para advogado, clínica, empresa, Innexar"
+      "title": "Site Profissional que Atrai Clientes pelo Google | R$ 197/mês | Innexar",
+      "description": "Site profissional otimizado para Google, 100% responsivo e integrado ao WhatsApp. Hospedagem, SSL e suporte incluídos. Praia Grande, Santos, São Paulo.",
+      "keywords": "criar site, site profissional, site empresarial, site R$ 197, site para advogado, clínica, empresa, aparecer no Google, Innexar"
     },
     "saas": {
       "title": "SaaS - Plataformas de Software como Serviço",
