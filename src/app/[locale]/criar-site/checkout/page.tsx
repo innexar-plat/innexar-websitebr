@@ -240,18 +240,15 @@ export default function CriarSiteCheckoutPage() {
             },
           },
           callbacks: {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onReady: () => {
               setBrickReady(true);
             },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onSubmit: async (param: { formData?: Record<string, unknown>; [key: string]: unknown }) => {
               const data = param.formData ?? param;
               await handleBrickSubmit(data);
             },
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            onError: (err: any) => {
-              console.error('Brick error:', err);
+            onError: (err: unknown) => {
+              console.error('Brick error:', err instanceof Error ? err.message : err);
               setError('Erro no formulário de pagamento. Recarregue a página.');
             },
           },

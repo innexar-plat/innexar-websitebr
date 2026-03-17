@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
@@ -95,20 +96,26 @@ export default function PromoPageClient() {
             {/* Visual Proof - 3 Mockups (Placeholder for now) */}
             <section className="px-6 py-12">
                 <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-3">
-                    <img
+                    <Image
                         src="/images/promo/website_mockup_1_1770088373318.png"
                         alt="Restaurant website mockup"
-                        className="w-full rounded-lg shadow-2xl"
+                        width={400}
+                        height={300}
+                        className="w-full rounded-lg shadow-2xl object-cover"
                     />
-                    <img
+                    <Image
                         src="/images/promo/website_mockup_2_1770088388813.png"
                         alt="Law firm website mockup"
-                        className="w-full rounded-lg shadow-2xl"
+                        width={400}
+                        height={300}
+                        className="w-full rounded-lg shadow-2xl object-cover"
                     />
-                    <img
+                    <Image
                         src="/images/promo/website_mockup_3_1770088404479.png"
                         alt="Dental clinic website mockup"
-                        className="w-full rounded-lg shadow-2xl"
+                        width={400}
+                        height={300}
+                        className="w-full rounded-lg shadow-2xl object-cover"
                     />
                 </div>
             </section>

@@ -45,17 +45,23 @@ export function initMetaPixel(pixelId?: string): void {
     const e = 'script'
 
     if (!f.fbq) {
-        const n: any = f.fbq = function (...args: unknown[]) {
-            n.callMethod ?
-                n.callMethod.apply(n, args) :
-                n.queue.push(args)
+        type FbqFn = ((...args: unknown[]) => void) & {
+            callMethod?: (...a: unknown[]) => void
+            queue: unknown[][]
+            push: FbqFn
+            loaded?: boolean
+            version?: string
         }
-
-        if (!f._fbq) f._fbq = n
+        const n = (function (this: FbqFn, ...args: unknown[]) {
+            if (this.callMethod) this.callMethod(...args)
+            else this.queue.push(args)
+        }) as unknown as FbqFn
+        n.queue = []
         n.push = n
         n.loaded = true
         n.version = '2.0'
-        n.queue = []
+        f.fbq = n
+        if (!f._fbq) f._fbq = n
 
         const t = b.createElement(e) as HTMLScriptElement
         t.async = true

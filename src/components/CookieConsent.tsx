@@ -13,42 +13,40 @@ type CookiePreferences = {
 
 const COOKIE_CONSENT_KEY = 'innexar_cookie_consent'
 
+function getInitialPreferences(): CookiePreferences {
+    if (typeof window === 'undefined') return { essential: true, analytics: false, marketing: false }
+    try {
+        const c = localStorage.getItem(COOKIE_CONSENT_KEY)
+        if (c) return JSON.parse(c) as CookiePreferences
+    } catch {
+        // ignore
+    }
+    return { essential: true, analytics: false, marketing: false }
+}
+
 export default function CookieConsent() {
     const t = useTranslations('cookies')
     const [isVisible, setIsVisible] = useState(false)
     const [showSettings, setShowSettings] = useState(false)
-    const [preferences, setPreferences] = useState<CookiePreferences>({
-        essential: true, // Always required
-        analytics: false,
-        marketing: false
-    })
+    const [preferences, setPreferences] = useState<CookiePreferences>(getInitialPreferences)
 
     function applyConsent(prefs: CookiePreferences) {
-        // Enable/disable analytics based on consent
-        if (typeof window !== 'undefined') {
-            ;(window as any).cookieConsent = prefs
-
-            // Dispatch event for other scripts to listen
-            window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: prefs }))
-        }
+        if (typeof window === 'undefined') return
+        ;(window as Window & { cookieConsent?: CookiePreferences }).cookieConsent = prefs
+        window.dispatchEvent(new CustomEvent('cookieConsentUpdated', { detail: prefs }))
     }
 
     useEffect(() => {
-        // Check if user has already consented
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY)
         if (!consent) {
-            // Show banner after short delay
             const timer = setTimeout(() => setIsVisible(true), 1500)
             return () => clearTimeout(timer)
-        } else {
-            // Load saved preferences
-            try {
-                const saved = JSON.parse(consent)
-                setPreferences(saved)
-                applyConsent(saved)
-            } catch (e) {
-                console.error('Error parsing cookie consent:', e)
-            }
+        }
+        try {
+            const saved = JSON.parse(consent) as CookiePreferences
+            applyConsent(saved)
+        } catch (e) {
+            console.error('Error parsing cookie consent:', e)
         }
     }, [])
 

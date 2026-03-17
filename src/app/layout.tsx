@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Geist } from "next/font/google";
+import { Geist } from 'next/font/google'
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
   title: 'Innexar - Technology Solutions',
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   },
 }
 
-// Root layout only passes children through - the [locale]/layout.tsx handles html/body
+// Root layout: apply font variable so it's available in DOM; [locale]/layout.tsx wraps content
 export default function RootLayout({
   children,
 }: {
   readonly children: React.ReactNode
 }) {
-  return children
+  return <div className={geist.variable}>{children}</div>
 }

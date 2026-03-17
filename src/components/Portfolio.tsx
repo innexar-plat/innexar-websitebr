@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, createElement } from 'react'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import {
@@ -178,19 +179,21 @@ const Portfolio = () => {
             >
               <div className="relative overflow-hidden h-64">
                 {/* Background Image with Gradient Overlay */}
-                <div className="absolute inset-0">
-                  <img
+                <div className="absolute inset-0 relative">
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 400px"
                     onError={(e) => {
-                      // Fallback para gradiente se a imagem falhar
                       const target = e.target as HTMLImageElement
                       target.style.display = 'none'
                       const parent = target.parentElement
                       if (parent) {
-                        parent.innerHTML = `<div class="w-full h-full bg-gradient-to-br ${project.gradient}"></div>`
+                        const fallback = document.createElement('div')
+                        fallback.className = `w-full h-full bg-gradient-to-br ${project.gradient}`
+                        parent.appendChild(fallback)
                       }
                     }}
                   />

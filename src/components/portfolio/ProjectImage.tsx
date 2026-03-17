@@ -14,12 +14,13 @@ export default function ProjectImage({ gradient, icon: Icon, iconColor, title, c
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    const t = setTimeout(() => setMounted(true), 0)
+    return () => clearTimeout(t)
   }, [])
 
   if (!mounted) {
     return (
-      <div className={`w-full h-full bg-gradient-to-br ${gradient} relative overflow-hidden`} style={{ minHeight: '256px' }}>
+      <div className={`w-full h-full bg-gradient-to-br ${gradient} relative overflow-hidden`} style={{ minHeight: '256px' }} aria-label={title}>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-16 h-16 border-4 border-white/40 border-t-transparent rounded-full animate-spin"></div>
         </div>
@@ -28,7 +29,7 @@ export default function ProjectImage({ gradient, icon: Icon, iconColor, title, c
   }
 
   return (
-    <div className={`w-full h-full bg-gradient-to-br ${gradient} relative overflow-hidden`} style={{ minHeight: '256px' }}>
+    <div className={`w-full h-full bg-gradient-to-br ${gradient} relative overflow-hidden`} style={{ minHeight: '256px' }} aria-label={title}>
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{

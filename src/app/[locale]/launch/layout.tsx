@@ -4,7 +4,6 @@ const PORTAL_URL =
   process.env.NEXT_PUBLIC_PORTAL_URL || "https://portal.innexar.com.br";
 
 export default async function LaunchLayout({
-  children,
   params,
 }: {
   children: React.ReactNode;
