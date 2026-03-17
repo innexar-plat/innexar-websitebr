@@ -1,4 +1,4 @@
-# innexar-websitebr – Next.js 16 standalone
+# innexar-websitebr – Next.js 16 standalone output
 FROM node:20-alpine AS builder
 
 WORKDIR /app
@@ -18,7 +18,7 @@ ENV NEXT_PUBLIC_WORKSPACE_API_URL=$NEXT_PUBLIC_WORKSPACE_API_URL
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 ENV NEXT_PUBLIC_MP_PUBLIC_KEY=$NEXT_PUBLIC_MP_PUBLIC_KEY
 
-# Webpack evita problemas de resolução de path do next-intl com Turbopack no container
+# Webpack evita problemas de resolução de path do next-intl com Turbopack
 RUN npx next build --webpack
 
 FROM node:20-alpine AS runner
@@ -36,7 +36,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-# next-intl carrega request config e messages em runtime
+
+# next-intl: i18n/ na raiz + src/i18n + messages (request.ts usa process.cwd()/messages)
+COPY --from=builder --chown=nextjs:nodejs /app/i18n ./i18n
 COPY --from=builder --chown=nextjs:nodejs /app/src/i18n ./src/i18n
 COPY --from=builder --chown=nextjs:nodejs /app/messages ./messages
 

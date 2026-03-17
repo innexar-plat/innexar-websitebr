@@ -1,16 +1,13 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
-// Plugin usa o request config (getRequestConfig); path relativo à raiz do projeto.
-const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const PORTAL_URL = process.env.NEXT_PUBLIC_PORTAL_URL || "https://portal.innexar.com.br";
 const WORKSPACE_URL = process.env.NEXT_PUBLIC_WORKSPACE_URL || "https://app.innexar.com.br";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  output: "standalone",
-  // Reduz bundle: importa só os ícones usados de lucide e heroicons
   experimental: {
     optimizePackageImports: ['lucide-react', '@heroicons/react'],
   },
