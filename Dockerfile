@@ -1,14 +1,15 @@
-# innexar-websitebr – Next.js 16 standalone output
+# innexar-websitebr – Next.js 16
 FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+# 1. Dependências (cache separado; patches/ para postinstall)
 COPY package.json package-lock.json* ./
+COPY patches ./patches
 RUN npm ci --no-audit --fund=false
 
+# 2. Código e build
 COPY . .
-
-# Build-time env (Coolify / CI can pass via --build-arg)
 ARG NEXT_PUBLIC_USE_WORKSPACE_API
 ARG NEXT_PUBLIC_WORKSPACE_API_URL
 ARG NEXT_PUBLIC_SITE_URL
@@ -18,11 +19,7 @@ ENV NEXT_PUBLIC_WORKSPACE_API_URL=$NEXT_PUBLIC_WORKSPACE_API_URL
 ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 ENV NEXT_PUBLIC_MP_PUBLIC_KEY=$NEXT_PUBLIC_MP_PUBLIC_KEY
 
-# Webpack evita problemas de resolução de path do next-intl com Turbopack
 RUN npx next build --webpack
-
-# Patch: next-intl/config carrega i18n/request.cjs em runtime (alias webpack falha no RSC)
-RUN node /app/scripts/patch-next-intl-config.js
 
 FROM node:20-alpine AS runner
 
@@ -32,15 +29,12 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --system --gid 1001 nodejs \
-  && adduser --system --uid 1001 nextjs
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
-
-# next-intl: i18n/ na raiz + src/i18n + messages (request.ts usa process.cwd()/messages)
 COPY --from=builder --chown=nextjs:nodejs /app/i18n ./i18n
 COPY --from=builder --chown=nextjs:nodejs /app/src/i18n ./src/i18n
 COPY --from=builder --chown=nextjs:nodejs /app/messages ./messages
@@ -48,7 +42,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/messages ./messages
 USER nextjs
 
 EXPOSE 3000
-
 ENV HOSTNAME="0.0.0.0"
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
